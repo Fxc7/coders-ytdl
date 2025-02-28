@@ -34,6 +34,7 @@ yarn install coders-ytdl
 ```
 ## Usage/Examples
 
+### ESM
 ```js
 import CodersYtdl from 'coders-ytdl';
 
@@ -58,7 +59,30 @@ import CodersYtdl from 'coders-ytdl';
 })('https://www.youtube.com/watch?v=IWKyykQBRKo');
 ```
 
+### CommonJS
+```js
+const CodersYtdl = require('coders-ytdl');
 
+(async (url) => {
+  try {
+    const init = new CodersYtdl(); // can also new CodersYtdl(url);
+    // If there is no URL argument in the constructor, you can add the method below.
+    init.downloadLink(url);
+    const result = await Promise.all([
+      await init.getMetadata(),
+      await init.getFullMetadata(),
+      await init.getBufferAudio(),
+      await init.getBufferVideo()
+    ]);
+    console.log('Metadata:', result[0]);
+    console.log('Full Metadata:', result[1]);
+    console.log('Buffer Audio:', result[2]);
+    console.log('Buffer Video:', result[3]);
+  } catch (error) {
+    console.error(error);
+  }
+})('https://www.youtube.com/watch?v=IWKyykQBRKo');
+```
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 

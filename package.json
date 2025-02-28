@@ -1,0 +1,53 @@
+{
+  "name": "coders-ytdl",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Download YouTube best audio or video free and fastest",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "postinstall": "node postinstall.js"
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "postinstall.js"
+  ],
+  "keywords": [
+    "ytdl",
+    "youtube",
+    "youtube downloader",
+    "youtube download",
+    "youtube audio",
+    "youtube video",
+    "youtube scrapper"
+  ],
+  "author": "FarhanXCode7 <farhanxcode7@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fxc7/coders-ytdl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fxc7/coders-ytdl/issues/"
+  },
+  "homepage": "https://github.com/Fxc7/coders-ytdl",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "got": "^14.4.6",
+    "ora": "^8.2.0"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "endOfLine": "auto",
+    "singleQuote": true,
+    "trailingComma": "none"
+  }
+}
